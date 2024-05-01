@@ -59,6 +59,18 @@ body.dark-mode {
     color: black; /* Change text color on hover */
 }
 
+#downloadCVButton:hover::before {
+    content: "https://nehalahmedshaikh.github.io/nehal_cv.pdf";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-family: default;
+    background-color: black;
+    font-size: 15px;
+    padding: 1vh;
+}
+
 #githubButton {
     border: none;
     background-color: black;
@@ -68,6 +80,7 @@ body.dark-mode {
     right: 5vw;
     height: 5vh; /* Adjust the value as needed */
     width: 5vw;
+    font-family: monospace;
     font-size: 4vmin;
     cursor: pointer;
 }
@@ -75,6 +88,18 @@ body.dark-mode {
 #githubButton:hover {
     background-color: white; /* Change background color on hover */
     color: black; /* Change text color on hover */
+}
+
+/* Style for the status bar text */
+#githubButton:hover::before {
+    content: "https://github.com/nehalahmedshaikh";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    padding: 1vh;
 }
 
 #darkModeButton {
