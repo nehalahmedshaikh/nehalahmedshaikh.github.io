@@ -1,0 +1,96 @@
+/* styles.css */
+
+/* Set the background color for the banner */
+.banner {
+    background-color: black;
+    height: 25vh; /* 25% of the viewport height */
+}
+
+/* Reset margin and padding for the entire page */
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.content h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+.content p {
+    font-size: 20px;
+    margin: 5vh;
+    padding: 0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#downloadCVButton {
+    border: none;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 20vh;
+    right: 10vw;
+    height: 5vh; /* Adjust the value as needed */
+    width: 5vw;
+    font-family: monospace;
+    font-size: 4vmin;
+    cursor: pointer;
+}
+
+#downloadCVButton:hover {
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+#githubButton {
+    border: none;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 20vh;
+    right: 5vw;
+    height: 5vh; /* Adjust the value as needed */
+    width: 5vw;
+    font-size: 4vmin;
+    cursor: pointer;
+}
+
+#githubButton:hover {
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+#darkModeButton {
+    border: none;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 20vh;
+    right: 0;
+    height: 5vh; /* Adjust the value as needed */
+    width: 5vw;
+    font-size: 4vmin;
+    cursor: pointer;
+}
+
+#darkModeButton:hover {
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
