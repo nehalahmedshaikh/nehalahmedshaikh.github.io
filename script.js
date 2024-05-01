@@ -24,19 +24,29 @@ githubButton.addEventListener('click', function(event) {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const darkModeButton = document.getElementById("darkModeButton");
-    let isDarkMode = false; // Initial state (light mode)
+const darkModeButton = document.getElementById("darkModeButton");
+let isDarkMode = false; // Initial state (light mode)
 
-    darkModeButton.addEventListener("click", function() {
-        // Toggle dark mode state
-        document.body.classList.toggle('dark-mode');
-        isDarkMode = !isDarkMode;
+// Check system dark mode preference
+const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        // Update the icon class based on the state
-        const icon = darkModeButton.querySelector("i");
-        icon.classList.toggle("fa-moon-o", !isDarkMode);
-        icon.classList.toggle("fa-sun-o", isDarkMode);
-    });
+// Set initial button icon based on system preference
+const icon = darkModeButton.querySelector("i");
+icon.classList.toggle("fa-moon-o", !prefersDarkMode);
+
+if (prefersDarkMode) {
+    document.body.classList.toggle('dark-mode');
+    icon.classList.toggle("fa-sun-o", prefersDarkMode);
+    isDarkMode = !isDarkMode;
+}
+
+darkModeButton.addEventListener("click", function() {
+    // Toggle dark mode state
+    document.body.classList.toggle('dark-mode');
+    isDarkMode = !isDarkMode;
+
+    // Update the icon class based on the state
+    const icon = darkModeButton.querySelector("i");
+    icon.classList.toggle("fa-moon-o", !isDarkMode);
+    icon.classList.toggle("fa-sun-o", isDarkMode); 
 });
-
