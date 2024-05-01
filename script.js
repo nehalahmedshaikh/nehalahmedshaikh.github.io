@@ -1,10 +1,7 @@
 // script.js
 
-// Get the button element
-const downloadButton = document.getElementById('downloadCVButton');
-
 // Add a click event listener to the button
-downloadButton.addEventListener('click', function(event) {
+downloadCVButton.addEventListener('click', function(event) {
     // Check if Ctrl (or Cmd on Mac) is pressed
     if (event.ctrlKey || event.metaKey) {
         // Open the link in a new tab
