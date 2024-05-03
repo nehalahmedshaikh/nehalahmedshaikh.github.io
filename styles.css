@@ -1,53 +1,59 @@
 /* styles.css */
 
-/* Set the background color for the banner */
 .banner {
     background-color: black;
-    height: 25vh; /* 25% of the viewport height */
+    height: 25vh;
 }
 
-/* Reset margin and padding for the entire page */
 body {
     font-family: monospace;
+    font-size: 16px;
     margin: 0;
     padding: 0;
-    color: black;
 }
 
 .content h1 {
-    font-size: 40px;
+    font-size: 50px;
     margin: 0;
     padding: 2px;
     text-align: center;
 }
 
 .content h2 {
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
     padding: 2px;
     text-align: center;
 }
 
 .content p {
+    font-family: monospace;
     font-size: 20px;
     margin: 5vh;
     padding: 0;
 }
 
-/* Dark mode styles */
+a {
+    color: black;
+}
+
+.dark-mode a {
+    color: white;
+}
+
 body.dark-mode {
     background-color: black;
     color: white;
 }
 
-#downloadCVButton {
+/* #downloadCVButton {
     border: none;
     background-color: black;
     color: white;
     position: absolute;
     top: 20vh;
     right: 10vw;
-    height: 5vh; /* Adjust the value as needed */
+    height: 5vh;
     width: 5vw;
     font-family: monospace;
     font-size: 4vmin;
@@ -55,52 +61,27 @@ body.dark-mode {
 }
 
 #downloadCVButton:hover {
-    background-color: white; /* Change background color on hover */
-    color: black; /* Change text color on hover */
-}
+    background-color: white;
+    color: black;
+} */
 
-#downloadCVButton:hover::before {
-    content: "https://nehalahmedshaikh.github.io/nehal_cv.pdf";
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    color: white;
-    font-family: default;
-    background-color: black;
-    font-size: 15px;
-    padding: 1vh;
-}
-
-#githubButton {
+/* #githubButton {
     border: none;
     background-color: black;
     color: white;
     position: absolute;
     top: 20vh;
     right: 5vw;
-    height: 5vh; /* Adjust the value as needed */
+    height: 5vh;
     width: 5vw;
-    font-family: monospace;
     font-size: 4vmin;
     cursor: pointer;
 }
 
 #githubButton:hover {
-    background-color: white; /* Change background color on hover */
-    color: black; /* Change text color on hover */
-}
-
-/* Style for the status bar text */
-#githubButton:hover::before {
-    content: "https://github.com/nehalahmedshaikh";
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    color: white;
-    background-color: black;
-    font-size: 15px;
-    padding: 1vh;
-}
+    background-color: white;
+    color: black;
+} */
 
 #darkModeButton {
     border: none;
@@ -108,14 +89,14 @@ body.dark-mode {
     color: white;
     position: absolute;
     top: 20vh;
-    right: 0;
-    height: 5vh; /* Adjust the value as needed */
+    right: 1vw;
+    height: 5vh;
     width: 5vw;
     font-size: 4vmin;
     cursor: pointer;
 }
 
 #darkModeButton:hover {
-    background-color: white; /* Change background color on hover */
-    color: black; /* Change text color on hover */
+    background-color: white;
+    color: black;
 }
