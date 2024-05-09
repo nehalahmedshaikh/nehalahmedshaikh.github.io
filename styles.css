@@ -1,12 +1,36 @@
 /* styles.css */
 
+@font-face {
+    font-family: "Computer Modern";
+    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunrm-webfont.woff");
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunbx-webfont.woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunti-webfont.woff");
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunbi-webfont.woff");
+    font-weight: bold;
+    font-style: oblique;
+}
+
 .banner {
     background-color: black;
     height: 25vh;
 }
 
 body {
-    font-family: monospace;
+    font-family: "Computer Modern";
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -20,17 +44,17 @@ body {
 }
 
 .content h2 {
-    font-size: 30px;
+    font-size: 24px;
     margin: 0;
     padding: 2px;
     text-align: center;
 }
 
 .content p {
-    font-family: monospace;
-    font-size: 20px;
+    font-size: 18px;
     margin: 5vh;
     padding: 0;
+    text-align: justify;
 }
 
 a {
