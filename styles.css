@@ -38,14 +38,14 @@ body {
 
 .content h1 {
     font-size: 50px;
-    margin: 0;
+    margin: 5vh;
     padding: 2px;
     text-align: center;
 }
 
 .content h2 {
     font-size: 24px;
-    margin: 0;
+    margin: 5vh;
     padding: 2px;
     text-align: center;
 }
@@ -116,11 +116,18 @@ body.dark-mode {
     right: 1vw;
     height: 5vh;
     width: 5vw;
+    margin: 0;
+    padding: 0;
     font-size: 4vmin;
+    text-align: center;
     cursor: pointer;
 }
 
 #darkModeButton:hover {
+    top: 20vh;
+    right: 1vw;
+    height: 5vh;
+    width: 5vw;
     background-color: white;
     color: black;
 }

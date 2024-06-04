@@ -14,11 +14,11 @@
         <div class="banner"></div>
         <div class="content">
             <h1>Nehal Ahmed Shaikh</h1>
-            <h2>LUMS 2024 | AI | Economics</h2>
+            <h2>AI | Economics</h2>
             <p>For now, the only interesting information about me that is publicly available is on my <a href="https://nehalahmedshaikh.github.io/nehal_cv.pdf">CV</a> and <a href="https://github.com/nehalahmedshaikh">GitHub</a>. More shall be shared on this minimalistic yet aesthetic page hopefully soon. For now, here's an incomplete but interesting problem.</p>
             <h2>The Cake-eating Problem</h2>
             <p>This is a simple finite-horizon dynamic optimization problem.</p>
-            <p>Suppose that you have a cake of size \(x_0\). At each point of time \(t = 0, 1, \dots, T - 1\), you consume \(c_t\) from the cake, deriving utility \(u(c_t)\) and leaving \(x_{t + 1}\) for the future, i.e, the evolution of the cake is governed by \(x_{t + 1} = x_t - c_t\). We assume that \(u(\cdot)\) is well behaved, differentiable, strictly increasing, and strictly concave; we further assume \(\lim_{c \to 0} u^\prime(c) \to \infty\) and represent your total utility by \[U = \sum_{{t=1}}^{T} (\beta^{t-1})u(c_t)\] where \(\beta \in [0, 1]\) is the discount factor.</p>
+            <p>Suppose that you have a cake of size \(x_0\). At each point of time \(t = 0, 1, \dots, T - 1\), you consume \(c_t\) from the cake, deriving utility \(u(c_t)\) and leaving \(x_{t + 1}\) for the future, i.e, the evolution of the cake is governed by \(x_{t + 1} = x_t - c_t\). We assume that \(u(\cdot)\) is well behaved, differentiable, strictly increasing, and strictly concave; we further assume \(\lim_{c \to 0} u^\prime(c) \to \infty\) and represent your total utility by \[U = \sum_{{t=1}}^{T} \alpha^{t-1}u(c_t)\] where \(\alpha \in [0, 1]\) is the discount factor.</p>
             <p>How would you ﬁnd the optimal path of consumption, \(\{c_t\}_1^T\)?</p>
         </div>
         <!-- <button id="downloadCVButton">CV</button> -->
