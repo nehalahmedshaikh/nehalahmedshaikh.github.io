@@ -2,24 +2,24 @@
 
 @font-face {
     font-family: "Computer Modern";
-    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunrm-webfont.woff");
+    src: url("../fonts/cmunrm-webfont.woff");
 }
 
 @font-face {
     font-family: "Computer Modern";
-    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunbx-webfont.woff");
+    src: url("../fonts/cmunbx-webfont.woff");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Computer Modern";
-    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunti-webfont.woff");
+    src: url("../fonts/cmunti-webfont.woff");
     font-style: oblique;
 }
 
 @font-face {
     font-family: "Computer Modern";
-    src: url("C:/Users/HP/GitHub Workspace/nehalahmedshaikh.github.io/cmunbi-webfont.woff");
+    src: url("../fonts/cmunbi-webfont.woff");
     font-weight: bold;
     font-style: oblique;
 }
