@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>al-Ājurrūmiyya Diagrammed</title>
+        <style>
+            @font-face {
+                font-family: "Computer Modern";
+                src: url("../woff/cmunrm-webfont.woff");
+            }
+
+            @font-face {
+                font-family: "Computer Modern";
+                src: url("../woff/cmunbx-webfont.woff");
+                font-weight: bold;
+            }
+
+            @font-face {
+                font-family: "Computer Modern";
+                src: url("../woff/cmunti-webfont.woff");
+                font-style: oblique;
+            }
+
+            @font-face {
+                font-family: "Computer Modern";
+                src: url("../woff/cmunbi-webfont.woff");
+                font-weight: bold;
+                font-style: oblique;
+            }
+
+            .banner {
+                background-color: black;
+                height: 25vh;
+            }
+
+            body {
+                font-family: "Computer Modern";
+                font-size: 16px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .content h1 {
+                font-size: 50px;
+                margin: 5vh;
+                padding: 2px;
+                text-align: center;
+            }
+
+            .mermaid {
+                margin: 5vh;
+                padding: 0;
+            } 
+        </style>
+
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    </head>
+
+    <body>
+        <div class="banner"></div>
+        <div class="content">
+            <h1>مخطط الآجرومية</h1>
+            <div class="mermaid">
+                flowchart RL
+                    kalam[كلام] --> ism[اسم]
+                    kalam --> fil[فعل]
+                    kalam --> harf[حرف]
+
+                    ism --> alamatism[علامات]
+                    ism --> irabism[إعراب]
+                    ism --> aqsamism[أقسام]
+
+                    alamatism --> alamatkhafd[خفض]
+                    alamatism --> tanwin[تنوين]
+                    alamatism --> al[ال]
+                    alamatism --> harfkhafd[حرف خفض]
+
+                    irabism --> rafism[رفع]
+                    irabism --> nasbism[نصب]
+                    irabism --> irabkhafd[خفض]
+
+                    rafism --> harakatrafism[بالحركات] --> dammaism[ضمة]
+                    rafism --> hurufrafism[بالحروف]
+
+                    dammaism --> ismmufraddamma[اسم مفرد]
+                    dammaism --> jamtaksirdama[جمع تكسير]
+                    dammaism --> jammuannathsalimdamma[جمع مؤنث سالم]
+
+                    hurufrafism --> wawism[و]
+                    hurufrafism --> alifrafism[ا] --> tathniyaismdamma[تثنية اسم]
+
+                    wawism --> jammudhakkarsalim[جمع مذكر سالم]
+                    wawism --> asmakhamsadamma[أسماء خمسة]
+
+                    nasbism --> harakatnasbism[بالحركات]
+                    nasbism --> hurufnasbism[بالحروف]
+
+                    harakatnasbism --> fathanasbism[فتحة]
+                    harakatnasbism --> kasranasbism[كسرة] --> jammuannathsalimfatha[جمع مؤنث سالم]
+
+                    fathanasbism --> ismmufradfatha[اسم مفرد]
+                    fathanasbism --> jamtaksirfatha[جمع تكسير]
+
+                    hurufnasbism --> alifnasbism[ا] --> asmakhamsafatha[أسماء خمسة]
+                    hurufnasbism --> yanasbism[ي]
+
+                    yanasbism --> tathniyaismfatha[تثنية اسم]
+                    yanasbism --> jamismfatha[جمع اسم]
+
+                    irabkhafd --> harakatkhafdism[بالحركات]
+                    irabkhafd --> hurufkhafdism[بالحروف] --> yakhafdism[ي]
+
+                    harakatkhafdism --> kasrairabkhafd[كسرة]
+                    harakatkhafdism --> fathakhafdism[فتحة] --> ismghayrmunsarif[اسم غير منصرف]
+
+                    kasrairabkhafd --> ismmufradmunsarif[اسم مفرد منصرف]
+                    kasrairabkhafd --> jamtaksirmunsarif[جمع تكسير منصرف]
+                    kasrairabkhafd --> jammuannathsalimkasra[جمع مؤنث سالم]
+
+                    yakhafdism --> asmakhamsakasra[أسماء خمسة]
+                    yakhafdism --> tathniyaismkaara[تثنية اسم]
+                    yakhafdism --> jamismkasra[جمع اسم]
+
+                    aqsamism --> marfuat[مرفوعات]
+                    aqsamism --> mansubat[منصوبات]
+                    aqsamism --> makhfudat[مخفوضات]
+
+                    marfuat --> fail[فاعل]
+                    marfuat --> naibfail[نائب فاعل]
+                    marfuat --> mubtada[مبتداء]
+                    marfuat --> khabar[خبر]
+                    marfuat --> ismkanaakhawat[اسم كان وأخواتها]
+                    marfuat --> khabarinnaakhawat[خبر إن وأخواتها]
+                    marfuat --> tawabimarfuat[توابع]
+
+                    fail --> zahirfail[ظاهر]
+                    fail --> mudmarfail[مضمر]
+
+                    naibfail --> zahirnaibfail[ظاهر]
+                    naibfail --> mudmarnaibfail[مضمر]
+
+                    mubtada --> zahirmubtada[ظاهر]
+                    mubtada --> mudmarmubtada[مضمر]
+                    mubtada --> awamil[عوامل]
+
+                    khabar --> mufrad[مفرد]
+                    khabar --> ghayrmufrad[غير مفرد]
+                    khabar --> awamil
+
+                    ghayrmufrad --> jarrmajrur[خافض مخفوض]
+                    ghayrmufrad --> zarf[ظرف]
+                    ghayrmufrad --> filfail[فعل مع فاعله]
+                    ghayrmufrad --> mubtadakhabar[مبتداء مع خبره]
+
+                    awamil --> kanaakhawat[كان وأخواتها]
+                    awamil --> innaakhawat[إن وأخواتها]
+                    awamil --> zanantuakhawat[ظننت وأخواتها]
+
+                    kanaakhawat --> kana[كان]
+                    kanaakhawat --> amsa[أمسى]
+                    kanaakhawat --> adha[أضحى]
+                    kanaakhawat --> zalla[ظل]
+                    kanaakhawat --> bata[بات]
+                    kanaakhawat --> sara[صار]
+                    kanaakhawat --> laysa[ليس]
+                    kanaakhawat --> mazala[ما زال]
+                    kanaakhawat --> mainfakka[ما انفك]
+                    kanaakhawat --> mafatia[ما فتئ]
+                    kanaakhawat --> mabariha[ما برح]
+                    kanaakhawat --> madama[ما دام]
+
+                    innaakhawat --> ininna[إن]
+                    innaakhawat --> aninna[أن]
+                    innaakhawat --> lakin[لكن]
+                    innaakhawat --> kaan[كأن]
+                    innaakhawat --> layta[ليت]
+                    innaakhawat --> laalla[لعل]
+
+                    zanantuakhawat --> zanantu[ظننت]
+                    zanantuakhawat --> hasibtu[حسبت]
+                    zanantuakhawat --> khiltu[خلت]
+                    zanantuakhawat --> zaamtu[زعمت]
+                    zanantuakhawat --> raaytu[رأيت]
+                    zanantuakhawat --> alimtu[علمت]
+                    zanantuakhawat --> wajadtu[وجدت]
+                    zanantuakhawat --> ittakhadhtu[اتخذت]
+                    zanantuakhawat --> jaaltu[جعلت]
+                    zanantuakhawat --> samitu[سمعت]
+
+                    tawabimarfuat --> nat[نعت] --> tarif[تعريف]
+                    tawabimarfuat --> atf[عطف] --> hurufatf[حروف]
+                    tawabimarfuat --> tawkid[توكيد]
+                    tawabimarfuat --> badal[بدل] --> aqsambadal[أقسام بدل]
+
+                    tarif --> ismmudmar[اسم مضمر]
+                    tarif --> ismalam[اسم علم]
+                    tarif --> ismmubham[اسم مبهم]
+                    tarif --> ismal[اسم ال]
+                    tarif --> ismmaudif[اسم مضاف إلى معرفة]
+
+                    hurufatf --> wawatf[و]
+                    hurufatf --> faatf[ف]
+                    hurufatf --> thummaatf[ثم]
+                    hurufatf --> awatf[أو]
+                    hurufatf --> amatf[أم]
+                    hurufatf --> immaatf[إما]
+                    hurufatf --> balatf[بل]
+                    hurufatf --> laatf[لا]
+                    hurufatf --> lakinatf[لكن]
+                    hurufatf --> hattaatf[حتى]
+
+                    tawkid --> tarif
+                    tawkid --> alfaz[ألفاظ]
+
+                    alfaz --> nafs[نفس]
+                    alfaz --> ayn[عين]
+                    alfaz --> kull[كل]
+                    alfaz --> ajmaa[أجمع]
+                    alfaz --> tawabiajmaa[توابع أجمع]
+
+                    tawabiajmaa --> aktaa[أكتع]
+                    tawabiajmaa --> abtaa[أبتع]
+                    tawabiajmaa --> absaa[أبصع]
+
+                    aqsambadal --> shayminshay[شيء من شيء]
+                    aqsambadal --> badminkull[بعض من كل]
+                    aqsambadal --> ishtimal[اشتمال]
+                    aqsambadal --> ghalat[غلط]
+
+                    mansubat --> mafulbihi[مفعول به]
+                    mansubat --> masdar[مصدر]
+                    mansubat --> mafulmutlaq[مفعول مطلق]
+                    mansubat --> zarfmakan[ظرف مكان]
+                    mansubat --> zarfzaman[ظرف زمان]
+                    mansubat --> hal[حال]
+                    mansubat --> tamyiz[تمييز]
+                    mansubat --> mustathna[مستثنى]
+                    mansubat --> ismla[اسم لا]
+                    mansubat --> munada[منادى]
+                    mansubat --> mafulminajlihi[مفعول من أجله]
+                    mansubat --> mafulmaahu[مفعول معه]
+                    mansubat --> khabarkanaakhawat[خبر كان وأخواتها]
+                    mansubat --> isminnaakhawat[اسم إن وأخواتها]
+                    mansubat --> tawabimansubat[توابع]
+
+                    mafulbihi --> zahirmafulbihi[ظاهر]
+                    mafulbihi --> mudmarmafulbihi[مضمر]
+
+                    mudmarmafulbihi --> muttasilmafulbihi[متصل]
+                    mudmarmafulbihi --> munfasilmafulbihi[منفصل]
+
+                    mafulmutlaq --> lafzimafulmutlaq[لفظي]
+                    mafulmutlaq --> manawimafulmutlaq[معنوي]
+
+                    mustathna --> illamustathna[إلا]
+                    mustathna --> ghayrmustathna[غير]
+                    mustathna --> siwamustathna[سوى]
+                    mustathna --> suwamustathna[سوى]
+                    mustathna --> sawamustathna[سواء]
+                    mustathna --> khalamustathna[خلا]
+                    mustathna --> adamustathna[عدا]
+                    mustathna --> hashamustathna[حاشا]
+
+                    munada --> mufradalam[مفرد علم]
+                    munada --> nakiramaqsuda[نكرة مقصودة]
+                    munada --> nakiraghayrmaqsuda[نكرة غير مقصودة]
+                    munada --> mudaf[مضاف]
+                    munada --> mushabbahmudaf[مشبه بالمضاف]
+
+                    makhfudat --> harfmakhfudat[حرف]
+                    makhfudat --> idafa[إضافة]
+                    makhfudat --> tawabimakhfudat[توابع]
+
+                    harfmakhfudat --> minharf[من]
+                    harfmakhfudat --> ilaharf[إلى]
+                    harfmakhfudat --> anharf[عن]
+                    harfmakhfudat --> alaharf[على]
+                    harfmakhfudat --> fiharf[في]
+                    harfmakhfudat --> rubbaharf[رب]
+                    harfmakhfudat --> baharf[باء]
+                    harfmakhfudat --> kafharf[كاف]
+                    harfmakhfudat --> lamharf[لام]
+                    harfmakhfudat --> hurufqasam[حروف قسم]
+
+                    hurufqasam --> wawqasam[واو]
+                    hurufqasam --> baqasam[باء]
+                    hurufqasam --> taqasam[تاء]
+
+                    fil --> alamatfil[علامات]
+                    fil --> irabfil[إعراب]
+                    fil --> aqsamfil[أقسام]
+
+                    alamatfil --> qad[قد]
+                    alamatfil --> sinsawfa[السين وسوف]
+                    alamatfil --> tatanithsakina[ت تأنيث ساكنة]
+
+                    irabfil --> raffil[رفع]
+                    irabfil --> nasbfil[نصب]
+                    irabfil --> jazm[جزم]
+
+                    raffil --> harakatraffil[بالحركات] --> dammafil[ضمة] --> filmudarilamyattasil[فعل مضارع لم يتصل بآخره شيء]
+                    raffil --> hurufraffil[بالحروف] --> nunfil[ن] --> filmudariittasala[فعل مضارع اتصل بآخره شيء]
+
+                    nasbfil --> harakatnasbfil[بالحركات] --> fathafil[فتحة] --> filmudarinasiblamyattasil[فعل مضارع لم يتصل بآخره شيء بعد ناصب]
+                    nasbfil --> hurufnasbfil[بالحروف] --> hadhfnun[حذف النون] --> afalkhamsa[أفعال خمسة]
+
+                    jazm --> harakatjazmfil[بالحركات] --> sukun[سكون] --> filmudarisahihakhir[فعل مضارع صحيح الآخر]
+                    jazm --> hurufjazmfil[بالحروف] --> hadhf[حذف]
+
+                    hadhf --> filmudarimutallakhir[فعل مضارع معتل الآخر]
+                    hadhf --> afalrafnun[أفعال رفعها بثبوت النون]
+
+                    aqsamfil --> mad[ماض]
+                    aqsamfil --> mudari[مضارع]
+                    aqsamfil --> amr[أمر]
+
+                    mudari --> zawaid[الزوائد]
+                    mudari --> nawasib[النواصب]
+                    mudari --> jawazim[الجوازم]
+
+                    zawaid --> alif[ألف]
+                    zawaid --> nun[نون]
+                    zawaid --> ya[ياء]
+                    zawaid --> ta[تاء]
+
+                    nawasib --> an[أن]
+                    nawasib --> lan[لن]
+                    nawasib --> idhan[إذا]
+                    nawasib --> kay[كي]
+                    nawasib --> lamkay[لام كي]
+                    nawasib --> lamjuhud[لام الجحود]
+                    nawasib --> hatta[حتى]
+                    nawasib --> jawabfa[جواب الفاء]
+                    nawasib --> waw[و]
+                    nawasib --> aw[أو]
+
+                    jawazim --> lam[لم]
+                    jawazim --> lamma[لما]
+                    jawazim --> alam[ألم]
+                    jawazim --> alamma[ألما]
+                    jawazim --> lamamr[لام الأمر]
+                    jawazim --> lanahy[لا نهي]
+                    jawazim --> in[إن]
+                    jawazim --> ma[ما]
+                    jawazim --> man[من]
+                    jawazim --> mahma[مهما]
+                    jawazim --> idhma[إذما]
+                    jawazim --> ayy[أي]
+                    jawazim --> mata[متى]
+                    jawazim --> ayna[أين]
+                    jawazim --> ayyana[أيان]
+                    jawazim --> anna[أن]
+                    jawazim --> haythuma[حيثما]
+                    jawazim --> kayfama[كيفما]
+                    jawazim --> idhanshir[إذا في الشعر]
+            </div>
+    </body>
+</html>
