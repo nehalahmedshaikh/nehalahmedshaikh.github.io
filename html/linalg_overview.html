@@ -20409,10 +20409,8 @@ Numerical hessian at (2, 3):
     <script>
         function copyCode(button) {
             const codeBlock = button.closest('.jp-InputArea').querySelector('pre').innerText;
-            navigator.clipboard.writeText(codeBlock).then(() => {
-                alert('Code copied to clipboard!');
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
+            navigator.clipboard.writeText(codeBlock).catch(err => {
+                // Optionally handle the error silently
             });
         }
     </script>
