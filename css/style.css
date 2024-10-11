@@ -109,25 +109,22 @@ body.dark-mode {
 
 #darkModeButton {
     border: none;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     color: white;
     position: absolute;
-    top: 20vh;
-    right: 1vw;
+    top: 20vmin;
+    right: 0;
     height: 5vmin;
-    width: 5vw;
-    margin: 0;
+    width: 5vmin;
     padding: 0;
     font-size: 4vmin;
-    text-align: center;
     cursor: pointer;
 }
 
-#darkModeButton:hover {
-    top: 20vh;
-    right: 1vw;
+/* #darkModeButton:hover {
+    top: 20vmin;
+    right: 0;
     height: 5vmin;
-    width: 5vw;
-    background-color: white;
-    color: black;
-}
+    width: 5vmin;
+    color: white;
+} */
