@@ -26,7 +26,7 @@
 
 .banner {
     background-color: black;
-    height: 25vh;
+    height: 25vmin;
 }
 
 body {
@@ -38,21 +38,21 @@ body {
 
 .content h1 {
     font-size: 50px;
-    margin: 5vh;
+    margin: 5vmin;
     padding: 2px;
     text-align: center;
 }
 
 .content h2 {
     font-size: 45px;
-    margin: 5vh;
+    margin: 5vmin;
     padding: 2px;
     text-align: center;
 }
 
 .content p {
     font-size: 20px;
-    margin: 5vh;
+    margin: 5vmin;
     padding: 0;
     text-align: justify;
 }
@@ -77,7 +77,7 @@ body.dark-mode {
     position: absolute;
     top: 20vh;
     right: 10vw;
-    height: 5vh;
+    height: 5vmin;
     width: 5vw;
     font-family: monospace;
     font-size: 4vmin;
@@ -96,7 +96,7 @@ body.dark-mode {
     position: absolute;
     top: 20vh;
     right: 5vw;
-    height: 5vh;
+    height: 5vmin;
     width: 5vw;
     font-size: 4vmin;
     cursor: pointer;
@@ -114,7 +114,7 @@ body.dark-mode {
     position: absolute;
     top: 20vh;
     right: 1vw;
-    height: 5vh;
+    height: 5vmin;
     width: 5vw;
     margin: 0;
     padding: 0;
@@ -126,7 +126,7 @@ body.dark-mode {
 #darkModeButton:hover {
     top: 20vh;
     right: 1vw;
-    height: 5vh;
+    height: 5vmin;
     width: 5vw;
     background-color: white;
     color: black;
