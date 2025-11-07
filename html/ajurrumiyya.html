@@ -1,70 +1,52 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>al-Ājurrūmiyya Diagrammed</title>
-        <style>
-            @font-face {
-                font-family: 'Computer Modern';
-                src: url('../woff/cmunrm-webfont.woff');
-            }
-
-            @font-face {
-                font-family: 'Computer Modern';
-                src: url('../woff/cmunbx-webfont.woff');
-                font-weight: bold;
-            }
-
-            @font-face {
-                font-family: 'Computer Modern';
-                src: url('../woff/cmunti-webfont.woff');
-                font-style: oblique;
-            }
-
-            @font-face {
-                font-family: 'Computer Modern';
-                src: url('../woff/cmunbi-webfont.woff');
-                font-weight: bold;
-                font-style: oblique;
-            }
-
-            .banner {
-                background-color: black;
-                height: 25vmin;
-            }
-
-            body {
-                font-family: 'Computer Modern';
-                font-size: 16px;
-                margin: 0;
-                padding: 0;
-            }
-
-            .content h1 {
-                font-size: 50px;
-                margin: 5vmin;
-                padding: 2px;
-                text-align: center;
-            }
-
-            .mermaid {
-                margin: 5vmin;
-                padding: 0;
-            } 
-        </style>
-
-        <script type='module'>
+        <link rel="stylesheet" href="../css/style.css">
+        <script type="module">
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-            mermaid.initialize({startOnLoad: true});
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'base',
+                themeVariables: {
+                    fontFamily: 'Computer Modern, serif',
+                    primaryColor: '#ffffff',
+                    primaryTextColor: '#000000',
+                    primaryBorderColor: '#000000',
+                    lineColor: '#000000',
+                    edgeLabelBackground: '#ffffff',
+                    clusterBkg: '#ffffff',
+                    clusterBorderColor: '#000000'
+                }
+            });
         </script>
     </head>
 
-    <body>
-        <div class='banner'></div>
-        <div class='content'>
-            <h1>مخطط الآجرومية</h1>
-            <div class='mermaid'>
+    <body class="poster diagram-page">
+        <div class="frame">
+            <header class="hero diagram-hero">
+                <div class="hero-left">
+                    <p class="kicker">al-Ājurrūmiyya</p>
+                    <h1>Diagramming Arabic Grammar.</h1>
+                    <p class="subtitle">Tracing the flow of kalām, ism, and fiʿl in stark black and white.</p>
+                    <div class="hero-links">
+                        <a class="btn btn-solid" href="../index.html">Back Home</a>
+                        <a class="btn btn-outline" href="#diagram">Jump to Chart</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <p>This chart rewrites Ibn Ājurrūm’s primer as a single flowchart. Each node mirrors the text, letting the logic of classical Arabic grammar live in one glance.</p>
+                </div>
+            </header>
+
+            <main class="grid diagram-grid">
+                <section class="panel panel-dark diagram-panel" id="diagram">
+                    <h2>Chart</h2>
+                    <!-- <p class="caption">Scroll / drag to inspect; each branch mirrors a clause from the text.</p> -->
+                    <div class="mermaid-wrapper">
+                        <div class="mermaid">
                 %%{init: {'theme': 'base',
                           'themeVariables': {'primaryColor': '#ffffff',
                                              'primaryTextColor': '#000000',
@@ -361,6 +343,12 @@
                     jawazim --> haythuma[حيثما]
                     jawazim --> kayfama[كيفما]
                     jawazim --> idhanshir[إذا في الشعر]
-            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <button id="darkModeButton" class="mode-toggle">LIGHT / DARK</button>
+        <script src="../js/script.js"></script>
     </body>
 </html>

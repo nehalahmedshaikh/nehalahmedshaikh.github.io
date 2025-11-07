@@ -24,107 +24,266 @@
     font-style: oblique;
 }
 
-.banner {
-    background-color: black;
-    height: 25vmin;
-}
-
-body {
-    font-family: "Computer Modern";
-    font-size: 16px;
+body.poster {
+    --page-bg: #000000;
+    --page-fg: #ffffff;
+    --frame-bg: #ffffff;
+    --frame-fg: #000000;
+    --panel-dark-bg: #000000;
+    --panel-dark-fg: #ffffff;
+    --panel-light-bg: #ffffff;
+    --panel-light-fg: #000000;
+    font-family: "Computer Modern", serif;
+    font-size: 18px;
+    background: var(--page-bg);
+    color: var(--page-fg);
     margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3vw;
+    box-sizing: border-box;
 }
 
-.content h1 {
-    font-size: 50px;
-    margin: 5vmin;
-    padding: 2px;
-    text-align: center;
+body.poster.dark-mode {
+    --page-bg: #ffffff;
+    --page-fg: #000000;
+    --frame-bg: #000000;
+    --frame-fg: #ffffff;
+    --panel-dark-bg: #ffffff;
+    --panel-dark-fg: #000000;
+    --panel-light-bg: #000000;
+    --panel-light-fg: #ffffff;
 }
 
-.content h2 {
-    font-size: 45px;
-    margin: 5vmin;
-    padding: 2px;
-    text-align: center;
+.frame {
+    background: var(--frame-bg);
+    color: var(--frame-fg);
+    width: min(960px, 100%);
+    outline: 6px solid var(--frame-fg);
+    padding: clamp(2rem, 6vw, 4rem);
+    box-sizing: border-box;
 }
 
-.content p {
-    font-size: 20px;
-    margin: 5vmin;
-    padding: 0;
-    text-align: justify;
+.hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    border: 6px solid var(--frame-fg);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.hero-left,
+.hero-right {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    box-sizing: border-box;
+}
+
+.hero-left {
+    background: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-right {
+    background: #ffffff;
+    color: #000000;
+    border-left: 6px solid var(--frame-fg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+body.poster.dark-mode .hero-left {
+    background: #ffffff;
+    color: #000000;
+}
+
+body.poster.dark-mode .hero-right {
+    background: #000000;
+    color: #ffffff;
+    border-color: var(--frame-fg);
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.subtitle {
+    font-style: oblique;
+    margin: 0;
+}
+
+.hero-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid currentColor;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.btn:hover {
+    opacity: 0.65;
+}
+
+.btn-solid {
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn-outline {
+    background: transparent;
+    color: inherit;
+}
+
+body.poster.dark-mode .btn-solid {
+    background: #000000;
+    color: #ffffff;
+}
+
+.grid {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.panel {
+    border: 4px solid var(--frame-fg);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    box-sizing: border-box;
+}
+
+.panel-dark {
+    background: var(--panel-dark-bg);
+    color: var(--panel-dark-fg);
+}
+
+.panel-light {
+    background: var(--panel-light-bg);
+    color: var(--panel-light-fg);
+}
+
+.panel h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.panel ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0 0;
+}
+
+.panel li + li {
+    margin-top: 0.5rem;
+}
+
+.panel .empty-list {
+    list-style: disc;
+}
+
+.panel .empty-list li {
+    font-style: oblique;
+}
+
+.diagram-page .frame {
+    width: min(1100px, 100%);
+}
+
+.diagram-grid {
+    grid-template-columns: 1fr;
+}
+
+.diagram-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 60vh;
+}
+
+.diagram-panel .caption {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.mermaid-wrapper {
+    flex: 1;
+    border: 2px solid currentColor;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.mermaid {
+    min-width: 600px;
 }
 
 a {
-    color: black;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 2px;
 }
 
-.dark-mode a {
-    color: white;
+a:hover {
+    opacity: 0.7;
 }
 
-body.dark-mode {
-    background-color: black;
-    color: white;
-}
-
-/* #downloadCVButton {
+.mode-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
     border: none;
-    background-color: black;
-    color: white;
-    position: absolute;
-    top: 20vh;
-    right: 10vw;
-    height: 5vmin;
-    width: 5vw;
-    font-family: monospace;
-    font-size: 4vmin;
-    cursor: pointer;
-}
-
-#downloadCVButton:hover {
-    background-color: white;
-    color: black;
-} */
-
-/* #githubButton {
-    border: none;
-    background-color: black;
-    color: white;
-    position: absolute;
-    top: 20vh;
-    right: 5vw;
-    height: 5vmin;
-    width: 5vw;
-    font-size: 4vmin;
-    cursor: pointer;
-}
-
-#githubButton:hover {
-    background-color: white;
-    color: black;
-} */
-
-#darkModeButton {
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    position: absolute;
-    top: 20vmin;
-    right: 0;
-    height: 5vmin;
-    width: 5vmin;
+    background: transparent;
+    color: var(--page-fg);
+    letter-spacing: 0.4em;
+    font-size: 0.75rem;
     padding: 0;
-    font-size: 4vmin;
     cursor: pointer;
 }
 
-/* #darkModeButton:hover {
-    top: 20vmin;
-    right: 0;
-    height: 5vmin;
-    width: 5vmin;
-    color: white;
-} */
+@media (max-width: 640px) {
+    body.poster {
+        padding: 1.5rem;
+    }
+
+    .hero {
+        border-width: 4px;
+    }
+
+    .hero-right {
+        border-left: none;
+        border-top: 6px solid var(--frame-fg);
+    }
+
+    body.poster.dark-mode .hero-right {
+        border-top: 6px solid var(--frame-fg);
+    }
+
+    .mode-toggle {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
