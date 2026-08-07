@@ -1,57 +1,51 @@
-// script.js
-
-// // Add a click event listener to the button
-// downloadCVButton.addEventListener('click', function(event) {
-//     // Check if Ctrl (or Cmd on Mac) is pressed
-//     if (event.ctrlKey || event.metaKey) {
-//         // Open the link in a new tab
-//         window.open('https://nehalahmedshaikh.github.io/nehal_cv.pdf', '_blank');
-//     } else {
-//         // Redirect in the same tab
-//         window.location.href = 'https://nehalahmedshaikh.github.io/nehal_cv.pdf';
-//     }    
-// });
-
-// // Add a click event listener to the button
-// githubButton.addEventListener('click', function(event) {
-//     // Check if Ctrl (or Cmd on Mac) is pressed
-//     if (event.ctrlKey || event.metaKey) {
-//         // Open the link in a new tab
-//         window.open('https://github.com/nehalahmedshaikh', '_blank');
-//     } else {
-//         // Redirect in the same tab
-//         window.location.href = 'https://github.com/nehalahmedshaikh';
-//     }
-// });
-
 const darkModeButton = document.getElementById("darkModeButton");
+const themeColorMeta = document.getElementById("themeColor");
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-let isDarkMode = mediaQuery.matches;
-
-const applyTheme = () => {
-    if (isDarkMode) {
-        document.body.classList.remove("dark-mode");
-    } else {
-        document.body.classList.add("dark-mode");
+const getStoredTheme = () => {
+    try {
+        return localStorage.getItem("theme");
+    } catch {
+        return null;
     }
 };
 
-const updateButtonLabel = () => {
-    darkModeButton.textContent = isDarkMode ? "LIGHT" : "DARK";
+const storeTheme = (theme) => {
+    try {
+        localStorage.setItem("theme", theme);
+    } catch {}
+};
+
+let isDarkMode = document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === "dark"
+    : getStoredTheme() === "dark" || (getStoredTheme() === null && mediaQuery.matches);
+
+const applyTheme = () => {
+    document.documentElement.dataset.theme = isDarkMode ? "dark" : "light";
+    themeColorMeta.setAttribute("content", isDarkMode ? "#000000" : "#ffffff");
+};
+
+const updateButton = () => {
+    const targetTheme = isDarkMode ? "light" : "dark";
+
+    darkModeButton.textContent = targetTheme.toUpperCase();
+    darkModeButton.setAttribute("aria-label", "Dark theme");
+    darkModeButton.setAttribute("aria-pressed", String(isDarkMode));
 };
 
 applyTheme();
-updateButtonLabel();
+updateButton();
 
 mediaQuery.addEventListener("change", (event) => {
-    isDarkMode = event.matches;
-    applyTheme();
-    updateButtonLabel();
+    if (getStoredTheme() === null) {
+        isDarkMode = event.matches;
+        applyTheme();
+        updateButton();
+    }
 });
 
-darkModeButton.addEventListener("click", function() {
+darkModeButton.addEventListener("click", () => {
     isDarkMode = !isDarkMode;
+    storeTheme(isDarkMode ? "dark" : "light");
     applyTheme();
-    updateButtonLabel();
+    updateButton();
 });

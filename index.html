@@ -3,55 +3,89 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nehal Ahmed Shaikh</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        <meta name="theme-color" id="themeColor" content="#000000">
+        <script>
+            (() => {
+                let savedTheme = null;
+
+                try {
+                    savedTheme = localStorage.getItem("theme");
+                } catch {}
+
+                const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+
+                const theme = savedTheme || systemTheme;
+
+                document.documentElement.dataset.theme = theme;
+                document.getElementById("themeColor").setAttribute(
+                    "content",
+                    theme === "dark" ? "#000000" : "#ffffff"
+                );
+            })();
         </script>
+        <title>Nehal Ahmed Shaikh</title>
+        <meta name="description" content="Selected work and notes by Nehal Ahmed Shaikh, with interests spanning artificial intelligence, literature, mathematics, and philosophy.">
+        <meta property="og:title" content="Nehal Ahmed Shaikh">
+        <meta property="og:description" content="Selected work and notes spanning artificial intelligence, literature, mathematics, philosophy, and more.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://nehalahmedshaikh.github.io/">
+        <meta name="twitter:card" content="summary">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23000%22/%3E%3Cpath d=%22M16 48V16h7l18 23V16h7v32h-7L23 25v23z%22 fill=%22%23fff%22/%3E%3C/svg%3E">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="poster">
-        <div class="frame">
-            <header class="hero">
-                <div class="hero-left">
-                    <p class="kicker">Nehal Ahmed Shaikh</p>
-                    <h1>Pursuing Research & Impact.</h1>
-                    <p class="subtitle">This site will house notes and artifacts as projects mature.</p>
-                    <div class="hero-links">
-                        <a class="btn btn-solid" href="pdf/nehal_cv.pdf">CV</a>
-                        <a class="btn btn-outline" href="https://github.com/nehalahmedshaikh">GitHub</a>
-                    </div>
+        <div class="page-shell">
+            <button id="darkModeButton" class="mode-toggle" type="button" aria-label="Dark theme" aria-pressed="false">LIGHT / DARK</button>
+            <div class="frame">
+            <header class="editorial-hero home-hero">
+                <div class="editorial-hero-heading">
+                    <h1>Nehal Ahmed Shaikh</h1>
                 </div>
-                <div class="hero-right">
-                    <p>I'm interested in animanga, artificial intelligence, game theory, math, philosophy, and whatever else fuels the mind.</p>
-                    <p>Always open to collaboration; feel free to email if anything here interests you.</p>
+                <div class="editorial-hero-copy">
+                    <p>I&rsquo;m interested in animanga, artificial intelligence, literature, math, philosophy, and whatever else fuels the mind. Currently working on AI-based products and optimization research.</p>
+                    <p>Always open to collaboration; feel free to <a href="mailto:nehalahmedshaikh@gmail.com">email me</a> if anything here interests you.</p>
+                    <div class="hero-links">
+                        <a class="btn btn-outline" href="pdf/nehal_cv.pdf">CV</a>
+                        <a class="btn btn-outline" rel="me" href="https://github.com/nehalahmedshaikh">GitHub</a>
+                    </div>
                 </div>
             </header>
 
             <main class="grid">
                 <section class="panel panel-dark">
                     <h2>Select</h2>
-                    <ul>
-                        <li>Submitted to ICASSP 2026 (see: <a href="https://arxiv.org/abs/2510.03216v1">paper</a>).</li>
-                        <li>Crafted the first version of this site.</li>
-                        <li>Graduated from Lahore University of Management Sciences and joined its ATP Lab.</li>
+                    <ul class="timeline">
+                        <li>
+                            <time datetime="2026">2026</time>
+                            <span><a href="https://ieeexplore.ieee.org/document/11460419">Wave-GMS: Lightweight Multi-Scale Generative Model for Medical Image Segmentation</a> accepted to ICASSP.</span>
+                        </li>
+                        <li>
+                            <time datetime="2024">2024</time>
+                            <span>Crafted the first version of this site.</span>
+                        </li>
+                        <li>
+                            <time datetime="2024">2024</time>
+                            <span>Graduated from Lahore University of Management Sciences.</span>
+                        </li>
                     </ul>
                 </section>
                 <section class="panel panel-light">
                     <h2>Salient</h2>
                     <ul class="empty-list">
-                        <li>Nothing public yet.</li>
+                        <li>Nothing yet.</li>
                     </ul>
                 </section>
                 <section class="panel panel-dark">
                     <h2>Sundry</h2>
                     <ul>
-                        <li><a href="html/ajurrumiyya.html">مخطط الآجرومية</a></li>
+                        <li><a href="html/ajurrumiyya.html" lang="ar" dir="rtl">مخطط الآجرومية</a></li>
                     </ul>
                 </section>
             </main>
+            </div>
         </div>
-        <button id="darkModeButton" class="mode-toggle">LIGHT / DARK</button>
         <script src="js/script.js"></script>
     </body>
 </html>

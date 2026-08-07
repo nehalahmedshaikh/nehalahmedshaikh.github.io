@@ -3,15 +3,45 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" id="themeColor" content="#000000">
+        <script>
+            (() => {
+                let savedTheme = null;
+
+                try {
+                    savedTheme = localStorage.getItem("theme");
+                } catch {}
+
+                const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+
+                const theme = savedTheme || systemTheme;
+
+                document.documentElement.dataset.theme = theme;
+                document.getElementById("themeColor").setAttribute(
+                    "content",
+                    theme === "dark" ? "#000000" : "#ffffff"
+                );
+            })();
+        </script>
         <title>al-Ājurrūmiyya Diagrammed</title>
+        <meta name="description" content="A single flowchart tracing the structure of Ibn Ājurrūm’s classical Arabic grammar primer.">
+        <meta property="og:title" content="al-Ājurrūmiyya Diagrammed">
+        <meta property="og:description" content="Ibn Ājurrūm’s classical Arabic grammar primer presented as a single flowchart.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://nehalahmedshaikh.github.io/html/ajurrumiyya.html">
+        <meta name="twitter:card" content="summary">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23000%22/%3E%3Cpath d=%22M16 48V16h7l18 23V16h7v32h-7L23 25v23z%22 fill=%22%23fff%22/%3E%3C/svg%3E">
+        <link rel="preload" href="../woff/NotoKufiArabic-Regular.ttf" as="font" type="font/ttf" crossorigin>
         <link rel="stylesheet" href="../css/style.css">
         <script type="module">
-            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.16.1/dist/mermaid.esm.min.mjs';
             mermaid.initialize({
-                startOnLoad: true,
+                startOnLoad: false,
                 theme: 'base',
                 themeVariables: {
-                    fontFamily: 'Computer Modern, serif',
+                    fontFamily: 'Noto Kufi Arabic, serif',
                     primaryColor: '#ffffff',
                     primaryTextColor: '#000000',
                     primaryBorderColor: '#000000',
@@ -19,38 +49,40 @@
                     edgeLabelBackground: '#ffffff',
                     clusterBkg: '#ffffff',
                     clusterBorderColor: '#000000'
+                },
+                flowchart: {
+                    padding: 24
                 }
             });
+
+            await document.fonts.load('16px "Noto Kufi Arabic"');
+            await mermaid.run();
         </script>
     </head>
 
     <body class="poster diagram-page">
-        <div class="frame">
-            <header class="hero diagram-hero">
-                <div class="hero-left">
+        <div class="page-shell">
+            <button id="darkModeButton" class="mode-toggle" type="button" aria-label="Dark theme" aria-pressed="false">LIGHT / DARK</button>
+            <div class="frame">
+            <header class="editorial-hero diagram-hero">
+                <div class="editorial-hero-heading">
                     <p class="kicker">al-Ājurrūmiyya</p>
                     <h1>Diagramming Arabic Grammar.</h1>
-                    <p class="subtitle">Tracing the flow of kalām, ism, and fiʿl in stark black and white.</p>
-                    <div class="hero-links">
-                        <a class="btn btn-solid" href="../index.html">Back Home</a>
-                        <a class="btn btn-outline" href="#diagram">Jump to Chart</a>
-                    </div>
                 </div>
-                <div class="hero-right">
+                <div class="editorial-hero-copy">
                     <p>This chart rewrites Ibn Ājurrūm’s primer as a single flowchart. Each node mirrors the text, letting the logic of classical Arabic grammar live in one glance.</p>
+                    <div class="hero-links">
+                        <a class="btn btn-outline" href="https://en.wikipedia.org/wiki/Al-Ajurrumiyya">Wikipedia</a>
+                        <a class="btn btn-outline" href="https://shamela.ws/book/11371">Shamela</a>
+                    </div>
                 </div>
             </header>
 
-            <main class="grid diagram-grid">
+            <main class="grid">
                 <section class="panel panel-dark diagram-panel" id="diagram">
                     <h2>Chart</h2>
-                    <!-- <p class="caption">Scroll / drag to inspect; each branch mirrors a clause from the text.</p> -->
                     <div class="mermaid-wrapper">
                         <div class="mermaid">
-                %%{init: {'theme': 'base',
-                          'themeVariables': {'primaryColor': '#ffffff',
-                                             'primaryTextColor': '#000000',
-                                             'primaryBorderColor': '#000000'}}}%%
                 flowchart RL
                     kalam[كلام] --> ism[اسم]
                     kalam --> fil[فعل]
@@ -347,8 +379,8 @@
                     </div>
                 </section>
             </main>
+            </div>
         </div>
-        <button id="darkModeButton" class="mode-toggle">LIGHT / DARK</button>
         <script src="../js/script.js"></script>
     </body>
 </html>
