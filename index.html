@@ -1,91 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" id="themeColor" content="#000000">
-        <script>
-            (() => {
-                let savedTheme = null;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <title>Nehal Ahmed Shaikh</title>
+    <meta name="description" content="Selected work, projects, and notes by Nehal Ahmed Shaikh, spanning artificial intelligence, literature, mathematics, and philosophy.">
+    <meta property="og:title" content="Nehal Ahmed Shaikh">
+    <meta property="og:description" content="Selected work, projects, and notes spanning artificial intelligence, literature, mathematics, and philosophy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nehalahmedshaikh.github.io/">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23000%22/%3E%3Cpath d=%22M16 48V16h7l18 23V16h7v32h-7L23 25v23z%22 fill=%22%23fff%22/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="site-shell">
+        <header class="site-header">
+            <p class="wordmark">Nehal Ahmed Shaikh</p>
+            <nav aria-label="Primary navigation">
+                <a href="pdf/nehal_cv.pdf">CV</a>
+                <a rel="me" href="https://github.com/nehalahmedshaikh">GitHub</a>
+                <a href="mailto:nehalahmedshaikh@gmail.com">Email</a>
+            </nav>
+        </header>
 
-                try {
-                    savedTheme = localStorage.getItem("theme");
-                } catch {}
+        <section class="hero" aria-label="Introduction">
+            <p>I&rsquo;m interested in animanga, artificial intelligence, literature, math, philosophy, and whatever else fuels the mind. Currently working on AI-based products and optimization research. Always open to collaboration.</p>
+        </section>
 
-                const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-                    ? "dark"
-                    : "light";
+        <div class="content-grid">
+            <section class="section select" aria-labelledby="select-title">
+                <header class="section-heading">
+                    <span aria-hidden="true">01</span>
+                    <h2 id="select-title">Select</h2>
+                </header>
+                <ol class="timeline">
+                    <li>
+                        <time datetime="2026">2026</time>
+                        <p><a href="https://ieeexplore.ieee.org/document/11460419">Wave-GMS: Lightweight Multi-Scale Generative Model for Medical Image Segmentation</a> accepted to ICASSP.</p>
+                    </li>
+                    <li>
+                        <time datetime="2024">2024</time>
+                        <p>Crafted the first version of this site.</p>
+                    </li>
+                    <li>
+                        <time datetime="2024">2024</time>
+                        <p>Graduated from Lahore University of Management Sciences.</p>
+                    </li>
+                </ol>
+            </section>
 
-                const theme = savedTheme || systemTheme;
+            <div class="side-column">
+                <section class="section" aria-labelledby="salient-title">
+                    <header class="section-heading">
+                        <span aria-hidden="true">02</span>
+                        <h2 id="salient-title">Salient</h2>
+                    </header>
+                    <p class="empty-state">Nothing yet.</p>
+                </section>
 
-                document.documentElement.dataset.theme = theme;
-                document.getElementById("themeColor").setAttribute(
-                    "content",
-                    theme === "dark" ? "#000000" : "#ffffff"
-                );
-            })();
-        </script>
-        <title>Nehal Ahmed Shaikh</title>
-        <meta name="description" content="Selected work and notes by Nehal Ahmed Shaikh, with interests spanning artificial intelligence, literature, mathematics, and philosophy.">
-        <meta property="og:title" content="Nehal Ahmed Shaikh">
-        <meta property="og:description" content="Selected work and notes spanning artificial intelligence, literature, mathematics, philosophy, and more.">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://nehalahmedshaikh.github.io/">
-        <meta name="twitter:card" content="summary">
-        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23000%22/%3E%3Cpath d=%22M16 48V16h7l18 23V16h7v32h-7L23 25v23z%22 fill=%22%23fff%22/%3E%3C/svg%3E">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body class="poster">
-        <div class="page-shell">
-            <button id="darkModeButton" class="mode-toggle" type="button" aria-label="Dark theme" aria-pressed="false">LIGHT / DARK</button>
-            <div class="frame">
-            <header class="editorial-hero home-hero">
-                <div class="editorial-hero-heading">
-                    <h1>Nehal Ahmed Shaikh</h1>
-                </div>
-                <div class="editorial-hero-copy">
-                    <p>I&rsquo;m interested in animanga, artificial intelligence, literature, math, philosophy, and whatever else fuels the mind. Currently working on AI-based products and optimization research.</p>
-                    <p>Always open to collaboration; feel free to <a href="mailto:nehalahmedshaikh@gmail.com">email me</a> if anything here interests you.</p>
-                    <div class="hero-links">
-                        <a class="btn btn-outline" href="pdf/nehal_cv.pdf">CV</a>
-                        <a class="btn btn-outline" rel="me" href="https://github.com/nehalahmedshaikh">GitHub</a>
-                    </div>
-                </div>
-            </header>
-
-            <main class="grid">
-                <section class="panel panel-dark">
-                    <h2>Select</h2>
-                    <ul class="timeline">
-                        <li>
-                            <time datetime="2026">2026</time>
-                            <span><a href="https://ieeexplore.ieee.org/document/11460419">Wave-GMS: Lightweight Multi-Scale Generative Model for Medical Image Segmentation</a> accepted to ICASSP.</span>
-                        </li>
-                        <li>
-                            <time datetime="2024">2024</time>
-                            <span>Crafted the first version of this site.</span>
-                        </li>
-                        <li>
-                            <time datetime="2024">2024</time>
-                            <span>Graduated from Lahore University of Management Sciences.</span>
-                        </li>
+                <section class="section" aria-labelledby="sundry-title">
+                    <header class="section-heading">
+                        <span aria-hidden="true">03</span>
+                        <h2 id="sundry-title">Sundry</h2>
+                    </header>
+                    <ul class="project-list">
+                        <li><a href="https://nehalahmedshaikh.github.io/doing-economics">Doing Economics in Julia <span aria-hidden="true">&nearr;</span></a></li>
+                        <li><a href="https://nehalahmedshaikh.github.io/executable-euclid/">Executable Euclid <span aria-hidden="true">&nearr;</span></a></li>
                     </ul>
                 </section>
-                <section class="panel panel-light">
-                    <h2>Salient</h2>
-                    <ul class="empty-list">
-                        <li>Nothing yet.</li>
-                    </ul>
-                </section>
-                <section class="panel panel-dark">
-                    <h2>Sundry</h2>
-                    <ul>
-                        <li><a href="html/ajurrumiyya.html" lang="ar" dir="rtl">مخطط الآجرومية</a></li>
-                    </ul>
-                </section>
-            </main>
             </div>
         </div>
-        <script src="js/script.js"></script>
-    </body>
+    </main>
+</body>
 </html>
