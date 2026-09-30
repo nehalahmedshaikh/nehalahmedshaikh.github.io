@@ -5,6 +5,10 @@
     --muted: #707070;
     --line: #b8b8b5;
     --wash: #ddddda;
+    --grid-line: rgba(0, 0, 0, 0.14);
+    --feature-space: 3rem;
+    --entry-padding: 0.65rem;
+    --paragraph-gap: 1em;
 }
 
 * {
@@ -19,7 +23,11 @@ body {
     margin: 0;
     min-width: 18rem;
     min-height: 100vh;
-    background: var(--background);
+    background-color: var(--background);
+    background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 36px 36px;
     color: var(--text);
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: clamp(1rem, 0.94rem + 0.25vw, 1.125rem);
@@ -72,6 +80,10 @@ a:hover {
     margin: 0;
 }
 
+.wordmark a {
+    text-decoration: none;
+}
+
 .site-header nav {
     display: flex;
     flex-wrap: wrap;
@@ -83,13 +95,11 @@ a:hover {
 }
 
 .hero {
-    min-height: min(26rem, 52vh);
-    display: flex;
-    align-items: center;
-    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    padding: var(--feature-space) 0;
 }
 
-.hero p {
+.hero p,
+.essay h1 {
     width: 100%;
     margin: 0;
     font-size: clamp(1.75rem, 3.2vw, 2.75rem);
@@ -142,7 +152,7 @@ a:hover {
     display: grid;
     grid-template-columns: 4rem minmax(0, 1fr);
     gap: clamp(1rem, 3vw, 2.5rem);
-    padding: 1.4rem 0;
+    padding: var(--entry-padding) 0;
     border-bottom: 1px solid var(--wash);
 }
 
@@ -157,12 +167,6 @@ a:hover {
     margin: 0;
 }
 
-.empty-state {
-    margin: 1.4rem 0 0 3rem;
-    color: var(--muted);
-    font-style: italic;
-}
-
 .project-list li {
     border-bottom: 1px solid var(--wash);
 }
@@ -171,12 +175,46 @@ a:hover {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem 0;
+    padding: var(--entry-padding) 0;
     text-decoration: none;
 }
 
 .project-list span {
     color: var(--muted);
+}
+
+.essay {
+    width: 100%;
+    margin: var(--feature-space) 0 0;
+}
+
+.essay h1 {
+    font-weight: 400;
+}
+
+.essay blockquote {
+    margin: var(--feature-space) 0;
+    padding: 0 0 0 1.5rem;
+    border-left: 1px solid var(--text);
+    color: var(--muted);
+    font-size: 1em;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.essay blockquote p,
+.essay-copy p {
+    margin: 0;
+}
+
+.essay blockquote p + p,
+.essay-copy p + p {
+    margin-top: var(--paragraph-gap);
+}
+
+.essay-copy {
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -186,6 +224,7 @@ a:hover {
         --muted: #9a9a97;
         --line: #50504e;
         --wash: #30302f;
+        --grid-line: rgba(255, 255, 255, 0.17);
     }
 }
 
@@ -201,11 +240,11 @@ a:hover {
     }
 
     .hero {
-        min-height: 0;
-        padding: clamp(4rem, 18vw, 7rem) 0 clamp(3.5rem, 14vw, 5rem);
+        padding: var(--feature-space) 0;
     }
 
-    .hero p {
+    .hero p,
+    .essay h1 {
         font-size: clamp(1.65rem, 7.5vw, 2.5rem);
     }
 
