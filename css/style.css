@@ -151,7 +151,6 @@ a:hover {
 .timeline li {
     display: grid;
     grid-template-columns: 4rem minmax(0, 1fr);
-    gap: clamp(1rem, 3vw, 2.5rem);
     padding: var(--entry-padding) 0;
     border-bottom: 1px solid var(--wash);
 }
